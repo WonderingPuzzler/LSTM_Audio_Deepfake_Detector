@@ -9,12 +9,19 @@ The LibreSeVoc dataset and inspiration for this project came from this project f
 
 I was pretty satisfied with the end results! I ended up getting a testing accuracy of 91-94% with the LibreSeVoc Dataset! Here are the Loss/Accuracy Curves and an example Confusion Matrix:
 
-![](Loss_CurvesV9.png)
+![](https://github.com/WonderingPuzzler/LSTM_Audio_Deepfake_Detector/blob/440990f63e007893751ddd4c4eb76b5feb25993b/Pictures/Loss_CurvesV9.png)
 
 
-![](Confusion_MatrixV9_5.png)
+![](https://github.com/WonderingPuzzler/LSTM_Audio_Deepfake_Detector/blob/440990f63e007893751ddd4c4eb76b5feb25993b/Pictures/Confusion_MatrixV9_5.png)
 
-I also included a Model State Dictionary in case you want to use this model and test its results out for yourself! It should be called DeepFake_Detector_LSTM_V9.pth 
+Additionally, I have a plot of an ROC curve (where I combined all the deepfake classes into one 'deepfake' predicition class) and a classification report:
+
+![](https://github.com/WonderingPuzzler/LSTM_Audio_Deepfake_Detector/blob/440990f63e007893751ddd4c4eb76b5feb25993b/Pictures/roc_curve_V9.png)
+
+
+![](https://github.com/WonderingPuzzler/LSTM_Audio_Deepfake_Detector/blob/440990f63e007893751ddd4c4eb76b5feb25993b/Pictures/classification_reportV9.png)
+
+Finally, I included a Model State Dictionary in case you want to use this model and test its results out for yourself! It should be called DeepFake_Detector_LSTM_V9.pth 
 
 ## Usage
 
