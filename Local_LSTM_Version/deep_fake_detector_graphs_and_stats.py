@@ -673,8 +673,8 @@ class DeepFakeDetectorGraphsAndStats(PyTorchDeepFakeDetectorLSTM):
             self.load_state_dict(torch.load(past_model, map_location=self.get_device()), strict=False)
             print("Model loaded successfully.\n")
         
-        # Check if predictions are already generated and generate them if not
-        if (self.get_testing_loader() is None or len(self.all_labels) == 0 or len(self.all_predictions) == 0) and past_model != 'None':
+        # Check if predictions are already generated and generate them if not (Note: we need probabilities here so we regenerate if needed)
+        if (self.get_testing_loader() is None or len(self.all_labels) == 0 or self.all_probabilities.size == 0) and past_model != 'None':
             
             # Generate predictions if not already done
             self.setup_data_loaders()
