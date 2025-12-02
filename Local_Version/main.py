@@ -6,7 +6,7 @@ def main() -> None:
         detector.set_batch_size(16) # Make it 16 samples per batch
         detector.set_learning_rate(0.001) # Set learning rate to 0.001
         detector.setup_data_loaders() # Setup data loaders
-        detector.set_optim("RMSprop") # Set optimizer to RMSprop
+        detector.set_optim("SGD") # Set optimizer to SGD
         detector.train_LSTM(num_epochs=100) # Train for 100 epochs
         detector.save_model('/content/drive/My Drive/CYBR_4980_Project/Dataset_Extracted/LibriSeVoc_extracted/Deep_Fake_Detector_LSTM_V15.pth') # Save the trained model
 
