@@ -614,12 +614,12 @@ class DeepFakeDetectorGraphsAndStats(PyTorchDeepFakeDetectorLSTM):
                 features: torch.Tensor = self.extract_features(samples)
 
                 # Store features and labels (move to CPU)
-                labels_list.extend(labels.cpu().numpy())
-                features_list.extend(features.cpu().numpy())
+                labels_list.append(labels.cpu().numpy())
+                features_list.append(features.cpu().numpy())
                 
 
         # Concatenate all feature outputs and labels
-        X_output: np.ndarray = np.concatenate(features_list)
+        X_output: np.ndarray = np.concatenate(features_list, axis=0)
         y_output: np.ndarray = np.concatenate(labels_list)
         
         print(f"Feature shape: {X_output.shape}")
@@ -804,11 +804,10 @@ if __name__ == "__main__":
     detector.test_batch_equality(8)
     detector.plot_random_mfcc_samples(samples=2) # Plot 2 random MFCC samples per class
 
-    detector.print_optimizer_loss_architecture('/content/drive/My Drive/CYBR_4980_Project/Dataset_Extracted/LibriSeVoc_extracted/Deep_Fake_Detector_LSTM_V9.pth')
-    detector.sns_scatter_plot('/content/drive/My Drive/CYBR_4980_Project/Dataset_Extracted/LibriSeVoc_extracted/Deep_Fake_Detector_LSTM_V9.pth')
-    detector.create_confusion_matrix('/content/drive/My Drive/CYBR_4980_Project/Dataset_Extracted/LibriSeVoc_extracted/Deep_Fake_Detector_LSTM_V9.pth')
-    detector.create_classification_report('/content/drive/My Drive/CYBR_4980_Project/Dataset_Extracted/LibriSeVoc_extracted/Deep_Fake_Detector_LSTM_V9.pth')
-    detector.plot_roc_curve_with_eer('/content/drive/My Drive/CYBR_4980_Project/Dataset_Extracted/LibriSeVoc_extracted/Deep_Fake_Detector_LSTM_V9.pth')
-
+    detector.print_optimizer_loss_architecture('/content/drive/My Drive/CYBR_4980_Project/Dataset_Extracted/LibriSeVoc_extracted/Deep_Fake_Detector_LSTM_V15.pth')
+    detector.sns_scatter_plot('/content/drive/My Drive/CYBR_4980_Project/Dataset_Extracted/LibriSeVoc_extracted/Deep_Fake_Detector_LSTM_V15.pth')
+    detector.create_confusion_matrix('/content/drive/My Drive/CYBR_4980_Project/Dataset_Extracted/LibriSeVoc_extracted/Deep_Fake_Detector_LSTM_V15.pth')
+    detector.create_classification_report('/content/drive/My Drive/CYBR_4980_Project/Dataset_Extracted/LibriSeVoc_extracted/Deep_Fake_Detector_LSTM_V15.pth')
+    detector.plot_roc_curve_with_eer('/content/drive/My Drive/CYBR_4980_Project/Dataset_Extracted/LibriSeVoc_extracted/Deep_Fake_Detector_LSTM_V15.pth')
 
  

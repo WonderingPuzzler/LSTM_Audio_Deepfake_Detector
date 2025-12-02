@@ -600,7 +600,7 @@ class BatchLossAndOptimization(ClassesFilesDictionarySetUp, nn.Module):
         test_dataset: Subset = Subset(self, test_indices)
 
         # Manually set class weights to try and get model to better understand class 1 (real) samples
-        class_weights: list[float] = [0.866667, 1.3, 1.05, 1.05, 0.866667, 1.0, 0.866666]
+        class_weights: list[float] = [0.866667, 1.3, 1.10, 1.05, 0.8167, 1.05, 0.8167]  
         
         class_weights_tensor: torch.Tensor = torch.tensor(class_weights, dtype=torch.float32)
         class_weights_tensor = class_weights_tensor.to(self.get_device())  # Move to the same device as the model

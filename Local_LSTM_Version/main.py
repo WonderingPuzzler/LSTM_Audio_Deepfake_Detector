@@ -4,7 +4,8 @@ def main() -> None:
     if os.path.exists('/content/drive/My Drive/CYBR_4980_Project/Dataset_Extracted/LibriSeVoc_extracted/LibriSeVoc'):
         detector = DeepFakeDetectorGraphsAndStats(directory='/content/drive/My Drive/CYBR_4980_Project/Dataset_Extracted/LibriSeVoc_extracted/LibriSeVoc', file_extension='.wav', loss='CrossEntropyLoss', optim='Adam', DL_type='RNN')
         detector.set_batch_size(16) # Make it 16 samples per batch
-        detector.set_learning_rate(0.001) # Set learning rate to 0.001
+        detector.set_duration(6) # Set duration to 6 seconds
+        detector.set_learning_rate(0.0008) # Set learning rate to 0.001
         detector.setup_data_loaders() # Setup data loaders
         detector.set_optim("Adam") # Set optimizer to Adam
         detector.train_LSTM(num_epochs=100) # Train for 100 epochs
