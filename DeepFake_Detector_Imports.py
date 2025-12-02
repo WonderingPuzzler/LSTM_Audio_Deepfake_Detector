@@ -37,7 +37,7 @@ import matplotlib.pyplot as plt # Import matplotlib for plotting
 import seaborn as sns # Import seaborn for enhanced visualizations
 
 # Import XGBoost and other classifiers
-from sklearn.preprocessing import RobustScaler
+from sklearn.preprocessing import RobustScaler, StandardScaler
 
 
 # Import audio processing libraries
@@ -47,6 +47,7 @@ from scipy.interpolate import interp1d
 import scipy.io.wavfile as wavfile
 import scipy.signal
 import librosa
+import librosa.display
 
 # Import collections for Counter
 from collections import Counter

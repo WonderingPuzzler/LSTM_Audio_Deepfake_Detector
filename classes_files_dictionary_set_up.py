@@ -799,8 +799,9 @@ class ClassesFilesDictionarySetUp(Dataset):
                 - time_steps = (sample_rate * duration) // hop_length + 1
                 - Features are MFCC coefficients extracted via librosa
                 - n_mfcc is the number of MFCCs, where MFCCs are Mel-Frequency Cepstral Coefficients
-                - Mel-Frequency Cepstral Coefficients (MFCCs) are a compact representation of the spectral characteristics of audio signals,
-                  commonly used in speech and audio processing tasks.
+                - Mel-Frequency Cepstral Coefficients (MFCCs) are a compact representation of the spectral 
+                  envelope of audio signals. They capture high-frequency characteristics while being robust 
+                  to pitch variations, making them effective features for distinguishing audio patterns.
                 - Audio is loaded with fixed duration and padded/truncated to exact length
             
             TODO:
